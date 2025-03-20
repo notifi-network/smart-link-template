@@ -8,6 +8,9 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
+  "bin": {
+    "setup-script": "./setup-script.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
