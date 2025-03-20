@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "setup-script": "./setup-script.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
