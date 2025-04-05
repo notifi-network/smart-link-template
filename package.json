@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "description": "Smart Link Template",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "NOTIFI_PROFILE=${PROFILE:-test} fusion parser upload $(node -e \"console.log(require('./notifi-config.json').parserId)\")"
+    "upload": "NOTIFI_PROFILE=${PROFILE:-test} fusion parser upload $(node -e \"console.log(require('./notifi-config.json').parserId)\")",
+    "build": "tsc && npx rollup -c rollup.config.js"
   },
   
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^4.36.0",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
     "typescript": "^5.8.2",
     "@notifi-network/dev-utils": "^1.0.0"
   }

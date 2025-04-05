@@ -20,3 +20,9 @@
 // }
 
 // rollup actual file  s
+
+const test = () => {
+  console.log("test");
+};
+
+test();
