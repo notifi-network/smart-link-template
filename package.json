@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "npx fusion-utils upload",
+    "upload": "tsc && npx rollup -c rollup.config.js && npx fusion-utils upload",
     "activate": "npx fusion-utils activate ${npm_config_cursor:+--cursor} ${npm_config_cursor:-}",
     "deactivate": "npx fusion-utils deactivate",
     "build": "tsc && npx rollup -c rollup.config.js"
