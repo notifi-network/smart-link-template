@@ -1,7 +1,5 @@
 // -api kai is working to upload action
-
-// -api to pull schema
-
+import { TenantApiGqlClient } from "@notifi-network/dev-utils/admin";
 // passedObject= {
 //     contextID: string
 //     parameters: {
@@ -22,6 +20,7 @@
 // rollup actual file  s
 
 const test = () => {
+  // const client = new TenantApiGqlClient("https://api.notifi.network/graphql");
   console.log("test");
 };
 

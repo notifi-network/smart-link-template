@@ -20,6 +20,6 @@
     "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.0",
     "typescript": "^5.8.2",
-    "@notifi-network/dev-utils": "^1.0.0"
+    "@notifi-network/dev-utils": "^1.0.4"
   }
 }
