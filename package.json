@@ -9,6 +9,8 @@
     "upload": "tsc && npx rollup -c rollup.config.js && npx fusion-utils upload",
     "activate": "npx fusion-utils activate ${npm_config_cursor:+--cursor} ${npm_config_cursor:-}",
     "deactivate": "npx fusion-utils deactivate",
+    "auth": "npx fusion-utils auth",
+    "init smart-link": "npx fusion-utils init smart-link",
     "build": "tsc && npx rollup -c rollup.config.js"
   },
   
@@ -22,6 +24,6 @@
     "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.0",
     "typescript": "^5.8.2",
-    "@notifi-network/dev-utils": "^1.1.0"
+    "@notifi-network/dev-utils": "^1.2.0"
   }
 }
