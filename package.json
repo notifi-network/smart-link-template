@@ -10,7 +10,7 @@
     "activate": "npx fusion-utils activate ${npm_config_cursor:+--cursor} ${npm_config_cursor:-}",
     "deactivate": "npx fusion-utils deactivate",
     "auth": "npx fusion-utils auth",
-    "init smart-link": "npx fusion-utils init smart-link",
+    "init-smart-link": "npx fusion-utils init smart-link",
     "build": "tsc && npx rollup -c rollup.config.js"
   },
   
