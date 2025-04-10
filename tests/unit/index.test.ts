@@ -12,7 +12,6 @@ describe("Expected Function Output From Action", () => {
       expect(item).toHaveProperty("successMessage");
       expect(item).toHaveProperty("failureMessage");
 
-      // Type guard to check if item is SmartLinkUserTxInteraction
       if ("transactions" in item) {
         expect(item.transactions).toBeInstanceOf(Array);
         item.transactions.forEach((transaction) => {
