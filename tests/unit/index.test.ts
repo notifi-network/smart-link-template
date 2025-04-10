@@ -1,4 +1,4 @@
-import parse from "../../src/parse";
+import parse from "../../src/index";
 
 console.log("Tests Failing? Make sure you've run `npm run init-smart-link`");
 describe("parse function", () => {
