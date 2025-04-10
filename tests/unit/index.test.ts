@@ -1,6 +1,8 @@
 import { parse } from "../../src/index.js";
 
-console.log("Tests Failing? Make sure you've run `npm run init-smart-link`");
+console.log(
+  "Tests Failing? Make sure you've run `npm run auth` && `npm run init-smart-link`"
+);
 
 describe("parse function", () => {
   it("should return SmartLinkActionResult when no transactions are present", () => {
