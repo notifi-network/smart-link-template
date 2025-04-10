@@ -4,23 +4,22 @@ console.log(
   "Tests Failing? Make sure you've run `npm run auth` && `npm run init-smart-link`"
 );
 
-describe("parse function", () => {
-  it("should return SmartLinkActionResult when no transactions are present", () => {
+describe("Expected Function Output From Action", () => {
+  it("should return either SmartLinkActionResult or SmartLinkUserTxInteraction", () => {
     const result = parse();
-    expect(result).toHaveProperty("successMessage");
-    expect(result).toHaveProperty("failureMessage");
-    expect(result).not.toHaveProperty("transactions");
-  });
+    expect(result).toBeInstanceOf(Array);
+    result.forEach((item) => {
+      expect(item).toHaveProperty("successMessage");
+      expect(item).toHaveProperty("failureMessage");
 
-  it("should return SmartLinkUserTxInteraction when transactions are present", () => {
-    const input = {
-      transactions: [
-        { blockchainType: "ARBITRUM", UnsignedTransaction: "0x123" },
-      ],
-    };
-    const result = parse(input);
-    expect(result).toHaveProperty("successMessage");
-    expect(result).toHaveProperty("failureMessage");
-    expect(result).toHaveProperty("transactions");
+      // Type guard to check if item is SmartLinkUserTxInteraction
+      if ("transactions" in item) {
+        expect(item.transactions).toBeInstanceOf(Array);
+        item.transactions.forEach((transaction) => {
+          expect(transaction).toHaveProperty("blockchainType");
+          expect(transaction).toHaveProperty("UnsignedTransaction");
+        });
+      }
+    });
   });
 });
