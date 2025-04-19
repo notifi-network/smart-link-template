@@ -27,6 +27,7 @@ export const createRollupConfig = ({
       {
         format: "cjs",
         file: `./dist/${fileName}.cjs`,
+        strict: false
       },
       ...(minify
         ? [
@@ -39,6 +40,7 @@ export const createRollupConfig = ({
               format: "cjs",
               file: `./dist/${fileName}.min.cjs`,
               plugins: [terser()],
+              strict: false
             },
           ]
         : []),
