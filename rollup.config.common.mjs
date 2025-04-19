@@ -24,11 +24,20 @@ export const createRollupConfig = ({
         format: "esm",
         file: `./dist/${fileName}.js`,
       },
+      {
+        format: "cjs",
+        file: `./dist/${fileName}.cjs`,
+      },
       ...(minify
         ? [
             {
               format: "esm",
               file: `./dist/${fileName}.min.js`,
+              plugins: [terser()],
+            },
+            {
+              format: "cjs",
+              file: `./dist/${fileName}.min.cjs`,
               plugins: [terser()],
             },
           ]
